@@ -1,4 +1,4 @@
-# burgers
+# Workout Tracker
 
 A workout tracker Web-app made using Node js, Express, MongoDB in MVC pattern.
 

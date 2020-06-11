@@ -30,7 +30,7 @@ apiiRouter.post('/api/workouts', async (req, res) => {
   try {
     const newWorkout = new Workout(req.body);
     const createdWorkout = await newWorkout.save();
-    console.log(createdWorkout);
+    // console.log(createdWorkout);
     res.status(201).json(createdWorkout);
   } catch (error) {
     console.log(error);
@@ -45,7 +45,7 @@ apiiRouter.post('/api/workouts', async (req, res) => {
 apiiRouter.put('/api/workouts/:id', async (req, res) => {
   try {
     const workoutToUpdate = await Workout.findById(req.params.id);
-    console.log(req.body);
+    // console.log(req.body);
     workoutToUpdate.exercises.push(req.body);
     const updatedWorkout = await workoutToUpdate.save();
     res.status(200).json(updatedWorkout);
@@ -55,7 +55,7 @@ apiiRouter.put('/api/workouts/:id', async (req, res) => {
   }
 });
 
-apiiRouter.get('/range', (req, res) => {
+apiiRouter.get('/api/workouts/range', (req, res) => {
   res.status(307).redirect('/api/workouts');
 });
 
